@@ -1,0 +1,23 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+public class FirstTest {
+
+	public static void main(String[] args) throws InterruptedException{
+		System.setProperty("Webdriver.chrome.driver","./chromedriver.exe");
+		//WebDriver driver = new ChromeDriver();
+		
+		   ChromeOptions co = new ChromeOptions();
+	         co.addArguments("--disable-notifications");
+	         WebDriver driver = new ChromeDriver(co);
+	         driver.get("https://www.yatra.com/");
+		driver.manage().window().maximize();
+//		 driver.findElement(By.xpath("//input[@class=\"gLFyf gsfi\"]");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//input[@id=\"BE_flight_origin_city\"]")).click();
+       // driver.close();
+		 
+	}
+}
